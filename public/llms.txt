@@ -1,0 +1,66 @@
+# Choppleganger - Find Your Ugly Celebrity Twin
+
+> Choppleganger is an iOS app that uses AI to match your selfie with celebrities at their worst moments. Upload a photo, get roasted, share the chaos.
+
+## About
+
+Choppleganger (also searched as: choppelganger, doppleganger, doppelganger, chopleganger, choplganger) is a fun, viral iOS application that uses advanced facial recognition AI to find which celebrity you resemble - but not their glamorous red carpet photos. Instead, we match you with paparazzi shots, awkward moments, and unflattering angles.
+
+The app is designed for entertainment and social sharing, particularly popular on TikTok and Instagram with the #ChopplegangerChallenge hashtag.
+
+## Key Features
+
+- AI-powered face matching against 10,000+ celebrity photos
+- Focus on unflattering, funny celebrity moments
+- Match percentage scoring (e.g., "94% match to Nicolas Cage confused at airport")
+- One-tap sharing to TikTok, Instagram, Snapchat
+- Emotion and vibe analysis
+- Multiple matches per scan (up to 10 celebrity twins)
+- Save and compare results over time
+
+## Pricing
+
+- 3-day free trial
+- $6.99/week subscription (Choppleganger Premium)
+- Cancel anytime through Apple App Store
+
+## Privacy
+
+- Photos used only for matching, stored only during active subscription
+- All user data permanently deleted when subscription ends
+- No data retention after subscription termination
+- Secure processing with encryption
+
+## Company
+
+Choppleganger is developed by Wave Tech LLC.
+
+Contact: pranav@wavetechhq.com
+
+## Common Search Terms
+
+People searching for this app may use:
+- choppleganger
+- choppelganger (typo)
+- doppleganger app
+- doppelganger celebrity app
+- ugly celebrity twin app
+- celebrity lookalike app
+- AI face match celebrity
+- find my celebrity twin
+- celebrity match app iOS
+- who do i look like celebrity
+- celebrity doppelganger finder
+
+## Links
+
+- App Store: [Coming Soon]
+- Privacy Policy: https://choppleganger.com/privacy
+- Terms of Service: https://choppleganger.com/terms
+- Contact: pranav@wavetechhq.com
+
+## Social
+
+- TikTok: #ChopplegangerChallenge
+- Instagram: @choppleganger
+- Twitter: @choppleganger

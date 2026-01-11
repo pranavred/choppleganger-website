@@ -1,0 +1,11 @@
+# Choppleganger - AI Celebrity Matching App
+# https://choppleganger.com
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://choppleganger.com/sitemap.xml
+
+# LLMs.txt for AI crawlers
+# See: https://choppleganger.com/llms.txt
