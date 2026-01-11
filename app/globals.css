@@ -1,0 +1,254 @@
+@import "tailwindcss";
+
+@theme {
+  /* Choppleganger Brand Colors */
+  --color-primary-blue: #0A84FF;
+  --color-primary-purple: #5856D6;
+  --color-primary-yellow: #FFD60A;
+  --color-dark: #1C1C1E;
+  --color-dark-secondary: #2C2C2E;
+  --color-light: #F5F5F7;
+  --color-muted: #8E8E93;
+
+  --font-serif: var(--font-serif);
+  --font-mono: var(--font-mono);
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
+
+  --shadow-glow: 0 0 30px rgba(10, 132, 255, 0.3);
+  --shadow-glow-yellow: 0 0 30px rgba(255, 214, 10, 0.4);
+  --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Global Reset */
+body {
+  background-color: var(--color-dark);
+  color: white;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--color-primary-blue), var(--color-primary-purple));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, var(--color-primary-purple), var(--color-primary-blue));
+}
+
+/* Animated Gradient Background */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@utility animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(var(--rotation, 0deg));
+  }
+  50% {
+    transform: translateY(-20px) rotate(var(--rotation, 0deg));
+  }
+}
+
+@utility animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Pulse Glow Animation */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 214, 10, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 214, 10, 0.8);
+  }
+}
+
+@utility animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Shimmer Effect */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@utility animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Glassmorphism */
+@utility glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@utility glass-dark {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Polaroid Card Style */
+@utility polaroid {
+  background: white;
+  padding: 8px;
+  padding-bottom: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+/* Halftone Pattern */
+.halftone {
+  position: relative;
+}
+
+.halftone::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 8px 8px;
+  pointer-events: none;
+}
+
+/* Gradient Text */
+@utility gradient-text {
+  background: linear-gradient(135deg, var(--color-primary-blue), var(--color-primary-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Yellow Highlight */
+@utility highlight-yellow {
+  background: linear-gradient(transparent 60%, var(--color-primary-yellow) 60%);
+}
+
+/* Bounce animation for CTA */
+@keyframes bounce-subtle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@utility animate-bounce-subtle {
+  animation: bounce-subtle 2s ease-in-out infinite;
+}
+
+/* Marquee Animations */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee2 {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@utility animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+@utility animate-marquee2 {
+  animation: marquee2 25s linear infinite;
+}
+
+/* Tilt on hover */
+@keyframes tilt {
+  0%, 100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+/* Spin slow */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@utility animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+/* Fade in up animation for sections */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@utility animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+/* Stagger delay utilities */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* Selection color */
+::selection {
+  background: var(--color-primary-yellow);
+  color: var(--color-dark);
+}
