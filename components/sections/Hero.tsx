@@ -2,12 +2,13 @@
 
 import { motion } from "framer-motion";
 import { Star, Download } from "lucide-react";
+import Image from "next/image";
 
 const polaroidCards = [
-  { rotation: -12, x: -180, y: 40, delay: 0, percent: 87 },
-  { rotation: 8, x: 160, y: -20, delay: 0.2, percent: 92 },
-  { rotation: -5, x: -120, y: -80, delay: 0.4, percent: 78 },
-  { rotation: 15, x: 200, y: 100, delay: 0.6, percent: 94 },
+  { rotation: -12, x: -180, y: 40, delay: 0, percent: 87, image: "/images/lookalikes/nicolas-cage-lookalike.png", celeb: "Nicolas Cage" },
+  { rotation: 8, x: 160, y: -20, delay: 0.2, percent: 92, image: "/images/lookalikes/steve-buscemi-lookalike.png", celeb: "Steve Buscemi" },
+  { rotation: -5, x: -120, y: -80, delay: 0.4, percent: 78, image: "/images/lookalikes/gary-busey-lookalike.png", celeb: "Gary Busey" },
+  { rotation: 15, x: 200, y: 100, delay: 0.6, percent: 94, image: "/images/lookalikes/adam-driver-lookalike.png", celeb: "Adam Driver" },
 ];
 
 export function Hero() {
@@ -52,9 +53,15 @@ export function Hero() {
               },
             }}
           >
-            {/* Placeholder celebrity image */}
-            <div className="w-full h-24 bg-gradient-to-br from-gray-300 to-gray-400 rounded-sm flex items-center justify-center">
-              <span className="text-4xl">🤨</span>
+            {/* Match image */}
+            <div className="w-full h-24 bg-gradient-to-br from-gray-300 to-gray-400 rounded-sm overflow-hidden relative">
+              <Image
+                src={card.image}
+                alt={`Match with ${card.celeb}`}
+                fill
+                className="object-cover"
+                sizes="128px"
+              />
             </div>
             {/* Match percentage badge */}
             <motion.div

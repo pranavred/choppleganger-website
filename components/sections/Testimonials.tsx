@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Star, Twitter } from "lucide-react";
+import Image from "next/image";
 
 const testimonials = [
   {
@@ -10,6 +11,7 @@ const testimonials = [
     author: "@jessicamakes",
     platform: "TikTok",
     stars: 5,
+    avatar: "/images/avatars/jessica.png",
   },
   {
     quote:
@@ -17,6 +19,7 @@ const testimonials = [
     author: "Sarah T.",
     platform: "App Store Review",
     stars: 5,
+    avatar: "/images/avatars/sarah.png",
   },
   {
     quote:
@@ -25,6 +28,7 @@ const testimonials = [
     platform: "Twitter",
     stars: 5,
     icon: Twitter,
+    avatar: "/images/avatars/dan.png",
   },
   {
     quote:
@@ -32,6 +36,7 @@ const testimonials = [
     author: "Marcus R.",
     platform: "Verified Subscriber",
     stars: 5,
+    avatar: "/images/avatars/marcus.png",
   },
 ];
 
@@ -87,8 +92,14 @@ export function Testimonials() {
 
               {/* Author */}
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary-blue to-primary-purple flex items-center justify-center text-white font-bold">
-                  {testimonial.author.charAt(0)}
+                <div className="w-10 h-10 rounded-full overflow-hidden relative">
+                  <Image
+                    src={testimonial.avatar}
+                    alt={testimonial.author}
+                    fill
+                    className="object-cover"
+                    sizes="40px"
+                  />
                 </div>
                 <div>
                   <p className="font-semibold text-white">

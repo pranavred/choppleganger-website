@@ -1,51 +1,52 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const exampleMatches = [
   {
-    userEmoji: "😴",
-    celebEmoji: "🤪",
+    userImage: "/images/lookalikes/nicolas-cage-lookalike.png",
+    celebImage: "/images/celebrities/nicolas-cage.jpg",
     celebName: "Nicolas Cage",
     matchPercent: 94,
     rank: "1ST",
     rotation: -3,
   },
   {
-    userEmoji: "🙄",
-    celebEmoji: "😑",
+    userImage: "/images/lookalikes/steve-buscemi-lookalike.png",
+    celebImage: "/images/celebrities/steve-buscemi.jpg",
     celebName: "Steve Buscemi",
     matchPercent: 89,
     rank: "2ND",
     rotation: 2,
   },
   {
-    userEmoji: "😬",
-    celebEmoji: "🤨",
+    userImage: "/images/lookalikes/renee-zellweger-lookalike.png",
+    celebImage: "/images/celebrities/renee-zellweger.jpg",
     celebName: "Renée Zellweger",
     matchPercent: 87,
     rank: "3RD",
     rotation: -2,
   },
   {
-    userEmoji: "🥴",
-    celebEmoji: "😵",
+    userImage: "/images/lookalikes/gary-busey-lookalike.png",
+    celebImage: "/images/celebrities/gary-busey.jpg",
     celebName: "Gary Busey",
     matchPercent: 92,
     rank: "1ST",
     rotation: 4,
   },
   {
-    userEmoji: "😤",
-    celebEmoji: "🫠",
+    userImage: "/images/lookalikes/cher-lookalike.png",
+    celebImage: "/images/celebrities/cher.jpg",
     celebName: "Cher",
     matchPercent: 85,
     rank: "4TH",
     rotation: -1,
   },
   {
-    userEmoji: "🤢",
-    celebEmoji: "🥺",
+    userImage: "/images/lookalikes/adam-driver-lookalike.png",
+    celebImage: "/images/celebrities/adam-driver.jpg",
     celebName: "Adam Driver",
     matchPercent: 91,
     rank: "2ND",
@@ -99,12 +100,26 @@ export function MatchGallery() {
                 {/* Split Image Container */}
                 <div className="flex">
                   {/* User Side */}
-                  <div className="w-1/2 aspect-square bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center border-r-2 border-dashed border-gray-400">
-                    <span className="text-6xl">{match.userEmoji}</span>
+                  <div className="w-1/2 aspect-square bg-gradient-to-br from-gray-200 to-gray-300 relative border-r-2 border-dashed border-gray-400 overflow-hidden">
+                    <Image
+                      src={match.userImage}
+                      alt="Your photo"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 200px"
+                    />
+                    <div className="absolute bottom-2 left-2 bg-black/50 text-white text-xs px-2 py-1 rounded">You</div>
                   </div>
                   {/* Celebrity Side */}
-                  <div className="w-1/2 aspect-square bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
-                    <span className="text-6xl">{match.celebEmoji}</span>
+                  <div className="w-1/2 aspect-square bg-gradient-to-br from-gray-300 to-gray-400 relative overflow-hidden">
+                    <Image
+                      src={match.celebImage}
+                      alt={match.celebName}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 200px"
+                    />
+                    <div className="absolute bottom-2 right-2 bg-black/50 text-white text-xs px-2 py-1 rounded">Celeb</div>
                   </div>
                 </div>
 
